@@ -1,0 +1,155 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #0b1220;
+  color: #dbe4f0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #101a30;
+  border-bottom: 1px solid #22304f;
+  flex-wrap: wrap;
+}
+
+.logo { font-weight: 700; color: #4ade80; margin-right: 6px; white-space: nowrap; }
+
+header input, header select, header button, #modal select, #modal button {
+  background: #16213a;
+  color: #dbe4f0;
+  border: 1px solid #3b4a6b;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+#circuitName { width: 180px; font-weight: 600; }
+
+header button, #modal button { cursor: pointer; }
+header button:hover, #modal button:hover { background: #1e2c4a; border-color: #38bdf8; }
+
+.sep { width: 1px; height: 22px; background: #22304f; margin: 0 4px; }
+
+label.speed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #8fa1bd;
+  white-space: nowrap;
+}
+
+label.speed input[type="range"] { width: 140px; accent-color: #4ade80; }
+#speedLabel { min-width: 62px; color: #dbe4f0; font-family: ui-monospace, monospace; }
+label.speed { cursor: pointer; }
+
+.tickOrder { margin: 8px 0; padding-left: 22px; }
+.tickOrder li { font-size: 12.5px; line-height: 1.55; margin: 5px 0; color: #dbe4f0; }
+
+#main { flex: 1; display: flex; min-height: 0; }
+
+#palette {
+  width: 132px;
+  padding: 10px 8px;
+  background: #101a30;
+  border-right: 1px solid #22304f;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+}
+
+#palette button {
+  background: #16213a;
+  color: #dbe4f0;
+  border: 1px solid #3b4a6b;
+  border-radius: 6px;
+  padding: 8px 6px;
+  font-size: 12.5px;
+  cursor: pointer;
+  font-family: ui-monospace, monospace;
+  font-weight: 600;
+}
+
+#palette button:hover { border-color: #38bdf8; }
+#palette button.active { background: #0e3a2a; border-color: #4ade80; color: #4ade80; }
+
+#palette .hint {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #8fa1bd;
+}
+
+#canvasWrap { flex: 1; overflow: auto; position: relative; }
+#canvas { display: block; cursor: crosshair; }
+
+#status {
+  padding: 5px 12px;
+  background: #101a30;
+  border-top: 1px solid #22304f;
+  font-size: 12px;
+  color: #8fa1bd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#status.error { color: #f87171; }
+#status.warn { color: #fbbf24; }
+
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 18, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#modal.hidden { display: none; }
+
+#modalBox {
+  background: #101a30;
+  border: 1px solid #3b4a6b;
+  border-radius: 10px;
+  padding: 16px;
+  width: min(860px, 94vw);
+  max-height: 88vh;
+  overflow-y: auto;
+}
+
+#modalTitle { font-weight: 700; margin-bottom: 10px; color: #4ade80; }
+
+#modalBody textarea {
+  width: 100%;
+  background: #0a0f1c;
+  color: #dbe4f0;
+  border: 1px solid #3b4a6b;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  padding: 8px;
+  margin: 6px 0;
+  resize: vertical;
+}
+
+#modalBody select { margin-bottom: 8px; background: #16213a; color: #dbe4f0; border: 1px solid #3b4a6b; border-radius: 6px; padding: 6px; }
+
+.fileLabel { font-family: ui-monospace, monospace; font-size: 12px; color: #38bdf8; margin-top: 10px; }
+.btnRow { display: flex; gap: 8px; }
+#modalButtons { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
+#modalButtons .primary { border-color: #4ade80; color: #4ade80; }
+
+.errorText { color: #f87171; font-size: 12px; margin-top: 6px; white-space: pre-wrap; }
+#modal .hint { font-size: 11.5px; color: #8fa1bd; margin-bottom: 6px; line-height: 1.5; }

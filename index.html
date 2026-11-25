@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logic Gate Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <span class="logo">&#9889; Logic Gate Studio</span>
+    <input id="circuitName" title="Circuit name (used as VHDL entity name)" spellcheck="false">
+    <select id="examples" title="Example circuits"></select>
+    <button id="btnLoadExample" title="Load the selected example">Load example</button>
+    <span class="sep"></span>
+    <button id="btnExportText" title="Export the circuit as an AI-readable text netlist">Export text (AI)</button>
+    <button id="btnExportVHDL" title="Export VHDL design + testbench for ModelSim">Export VHDL (ModelSim)</button>
+    <button id="btnImport" title="Import a text netlist or VHDL back into the editor">Import</button>
+    <button id="btnClear" title="Start a new empty circuit">New</button>
+    <span class="sep"></span>
+    <label class="speed" id="speedCtl" title="Simulation speed: how many full recalculations per second. 'max' recalculates on every change, as fast as the PC allows. At 1 the circuit recalculates exactly once per second. Click here to see the calculation order of a tick.">
+      Speed
+      <input type="range" id="speed" min="1" max="61" step="1" value="61">
+      <span id="speedLabel">max</span>
+    </label>
+  </header>
+  <div id="main">
+    <aside id="palette"></aside>
+    <div id="canvasWrap">
+      <canvas id="canvas"></canvas>
+    </div>
+  </div>
+  <footer id="status"></footer>
+  <div id="modal" class="hidden">
+    <div id="modalBox">
+      <div id="modalTitle"></div>
+      <div id="modalBody"></div>
+      <div id="modalButtons"></div>
+    </div>
+  </div>
+  <script src="js/core/circuit.js"></script>
+  <script src="js/core/netlist.js"></script>
+  <script src="js/core/vhdl.js"></script>
+  <script src="js/core/examples.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>
