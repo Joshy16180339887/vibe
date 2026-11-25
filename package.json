@@ -1,0 +1,10 @@
+{
+  "name": "logic-gate-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Visual logic-gate circuit editor with text (AI) and VHDL (ModelSim) export/import",
+  "scripts": {
+    "test": "node test/run-tests.js && node test/smoke-ui.js",
+    "serve": "python3 -m http.server 8000"
+  }
+}
